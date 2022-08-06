@@ -1,0 +1,10 @@
+## Project generated code
+
+node_modules
+dist
+
+## Ignore MacOS system files
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
