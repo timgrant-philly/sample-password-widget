@@ -14,10 +14,6 @@
     "test": "test",
     "rollup": "rollup -c"
   },
-  // "repository": {
-  //   "type": "git",
-  //   "url": "git+https://github.com/timgrant-philly/sample-password-widget.git"
-  // },
   "keywords": [
     "react",
     "typescript",
