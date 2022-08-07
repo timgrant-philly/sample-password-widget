@@ -1,6 +1,6 @@
 {
   "name": "@timgrant-philly/sample-password-widget",
-  "publishConfig": {"registry": "https://npm.pkg.github.com/timgrant-philly"},
+  "publishConfig": {"registry": "https://github.com/timgrant-philly"},
   "version": "1.0.0",
   "description": "Example React Library. Set up the Alex Eagleson way.",
   "main": "dist/cjs/index.js",
