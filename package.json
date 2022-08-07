@@ -1,6 +1,7 @@
 {
   "name": "@timgrant-philly/sample-password-widget",
-  "publishConfig": {"registry": "https://github.com/timgrant-philly"},
+  "publishConfig": {"registry": "https://npm.pkg.github.com/"},
+  "repository": "git://github.com/timgrant-philly/sample-password-widget.git",
   "version": "1.0.0",
   "description": "Example React Library. Set up the Alex Eagleson way.",
   "main": "dist/cjs/index.js",
@@ -13,10 +14,10 @@
     "test": "test",
     "rollup": "rollup -c"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/timgrant-philly/sample-password-widget.git"
-  },
+  // "repository": {
+  //   "type": "git",
+  //   "url": "git+https://github.com/timgrant-philly/sample-password-widget.git"
+  // },
   "keywords": [
     "react",
     "typescript",
