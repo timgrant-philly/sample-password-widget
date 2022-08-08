@@ -2,18 +2,6 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
-
-export interface InputProps {
-  label: string;
-  ariaDescription?: string;
-}
-
-interface RuleType {
-  name: string;
-  pattern: RegExp;
-  description: string;
-}
-
 const rules = [{
   name: 'Minimum length',
   pattern: /.{6,}/,
@@ -36,13 +24,12 @@ const rules = [{
 },
 {
   name: '',
-  pattern: /\!\@\#\$\%\^\&\*\(\)\_\-\+\=\{\[\}\]\|\:\;\"\'\<\,\>\./,
+  pattern: /!@#\$%\^&\*\(\)_-\+=\{\[\}\]\|:;"'<,>\./,
   description: `Password has at least 1 special character (!@#$%^&*()_-+={[}]|:;"'<,>.)`,
 },
-]
+];
 
-const Password = (props: InputProps) => {
-  const { label, ...otherprops } = props;
+const Password = () => {
   const ariaDescriptionID = uuidv4();
   const [value, setValue] = useState('');
   const [confirmValue, setConfirmValue] = useState('');
@@ -59,37 +46,36 @@ const Password = (props: InputProps) => {
   const onSubmit = () => {
     console.log("Submitted");
     const myValue = value;
-    const errors: string[] = [];
+    const messageArray: string[] = [];
 
     if (myValue !== confirmValue) {
-      errors.push('Both inputs must match');
+      messageArray.push('Both inputs must match');
     }
 
     rules.forEach(rule => {
-      const { name, pattern, description } = rule;
+      const { pattern, description } = rule;
 
       if (!myValue.match(pattern)) {
-        errors.push(description);
+        messageArray.push(description);
       }
     });
 
-    if (errors.length > 0) {
-      setValidationMessages(errors);
-    } else {
-      setValidationMessages(['Success']);
-    }
+    if (messageArray.length == 0) {
+      messageArray.push('Success')
+    } 
+    setValidationMessages(messageArray);
   }
 
   const renderValidationMessages = () => {
     return validationMessages.map((m) => {
-      return <div>{m}</div>
+      return <div key={m}>{m}</div>
     })
   }
 
   return (
     <div className="tcg-input">
       <label>
-        <div>{props.label}</div>
+        <div>Password</div>
         <div>
           <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input>
         </div>
@@ -99,7 +85,7 @@ const Password = (props: InputProps) => {
         <div>Confirm Password</div>
         <div>
           <div>
-            <input id="password-confirm" value={confirmValue} onChange={onChange}></input>
+            <input id="password-confirm" value={confirmValue} onChange={onConfirmChange}></input>
           </div>
         </div>
       </label>
@@ -109,7 +95,7 @@ const Password = (props: InputProps) => {
       </div>
 
       <label>
-        <Button type="submit" children="Submit" onClick={onSubmit} />
+        <Button type="submit" onClick={onSubmit}>Submit</Button>
       </label>
     </div>
   );
