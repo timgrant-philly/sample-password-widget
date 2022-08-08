@@ -2,32 +2,32 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
-const rules = [{
-  name: 'Minimum length',
-  pattern: /.{6,}/,
-  description: 'Password has a min length of 6 characters',
-},
-{
-  name: 'Uppercase',
-  pattern: /[A-Z]/,
-  description: 'Password has at least 1 uppercase character',
-},
-{
-  name: 'Lowercase',
-  pattern: /[a-z]/,
-  description: 'Password has at least 1 lowercase character',
-},
-{
-  name: 'Number',
-  pattern: /\d/,
-  description: 'Password has at least 1 number',
-},
-{
-  name: '',
-  pattern: /!@#\$%\^&\*\(\)_-\+=\{\[\}\]\|:;"'<,>\./,
-  description: `Password has at least 1 special character (!@#$%^&*()_-+={[}]|:;"'<,>.)`,
-},
-];
+// const rules = [{
+//   name: 'Minimum length',
+//   pattern: /.{6,}/,
+//   description: 'Password has a min length of 6 characters',
+// },
+// {
+//   name: 'Uppercase',
+//   pattern: /[A-Z]/,
+//   description: 'Password has at least 1 uppercase character',
+// },
+// {
+//   name: 'Lowercase',
+//   pattern: /[a-z]/,
+//   description: 'Password has at least 1 lowercase character',
+// },
+// {
+//   name: 'Number',
+//   pattern: /\d/,
+//   description: 'Password has at least 1 number',
+// },
+// {
+//   name: '',
+//   pattern: /!@#\$%\^&\*\(\)_-\+=\{\[\}\]\|:;"'<,>\./,
+//   description: `Password has at least 1 special character (!@#$%^&*()_-+={[}]|:;"'<,>.)`,
+// },
+// ];
 
 const Password = () => {
   const ariaDescriptionID = uuidv4();
@@ -44,27 +44,28 @@ const Password = () => {
   };
 
   const onSubmit = () => {
-    console.log("Submitted");
-    const myValue = value;
-    const messageArray: string[] = [];
+    setValidationMessages(['submitted']);
+    //   console.log("Submitted");
+  //   const myValue = value;
+  //   const messageArray: string[] = [];
 
-    if (myValue !== confirmValue) {
-      messageArray.push('Both inputs must match');
-    }
+  //   if (myValue !== confirmValue) {
+  //     messageArray.push('Both inputs must match');
+  //   }
 
-    rules.forEach(rule => {
-      const { pattern, description } = rule;
+  //   rules.forEach(rule => {
+  //     const { pattern, description } = rule;
 
-      if (!myValue.match(pattern)) {
-        messageArray.push(description);
-      }
-    });
+  //     if (!myValue.match(pattern)) {
+  //       messageArray.push(description);
+  //     }
+  //   });
 
-    if (messageArray.length == 0) {
-      messageArray.push('Success')
-    } 
-    setValidationMessages(messageArray);
-  }
+  //   if (messageArray.length == 0) {
+  //     messageArray.push('Success')
+  //   } 
+  //   setValidationMessages(messageArray);
+   }
 
   const renderValidationMessages = () => {
     return validationMessages.map((m) => {
