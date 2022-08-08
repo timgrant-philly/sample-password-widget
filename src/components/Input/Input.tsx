@@ -21,7 +21,7 @@ const Input = (props: InputProps) => {
   };
 
   return (
-    <div>
+    <div className="tcg-input">
       <label>
         <div>{props.label}</div>
         <div>
