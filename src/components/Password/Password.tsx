@@ -33,7 +33,7 @@ const Password = () => {
   const ariaDescriptionID = uuidv4();
   const [value, setValue] = useState('');
   const [confirmValue, setConfirmValue] = useState('');
-  const [validationMessages, setValidationMessages] = useState<string[]>([]);
+  const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
   const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setValue(event.target.value);
@@ -44,7 +44,7 @@ const Password = () => {
   };
 
   const onSubmit = () => {
-    setValidationMessages(['submitted']);
+    // setValidationMessages(['submitted']);
     //   console.log("Submitted");
   //   const myValue = value;
   //   const messageArray: string[] = [];
