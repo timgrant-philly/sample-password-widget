@@ -31,7 +31,7 @@ import Button from "../Button";
 
 const Password = () => {
   const ariaDescriptionID = uuidv4();
-  const [value, setValue] = useState('seventeen');
+  const [value] = useState('seventeen'); // , setValue
   // const [confirmValue, setConfirmValue] = useState('');
   // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
@@ -44,7 +44,7 @@ const Password = () => {
   // };
 
   const onSubmit = () => {
-    setValue('banana');
+  
     // setValidationMessages(['submitted']);
     //   console.log("Submitted");
   //   const myValue = value;
