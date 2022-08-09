@@ -1,4 +1,4 @@
-import React from "react"; //, { useState }
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
@@ -31,7 +31,7 @@ import Button from "../Button";
 
 const Password = () => {
   const ariaDescriptionID = uuidv4();
-  // const [value, setValue] = useState('');
+  const [value, setValue] = useState('seventeen');
   // const [confirmValue, setConfirmValue] = useState('');
   // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
@@ -44,6 +44,7 @@ const Password = () => {
   // };
 
   const onSubmit = () => {
+    setValue('banana');
     // setValidationMessages(['submitted']);
     //   console.log("Submitted");
   //   const myValue = value;
@@ -78,7 +79,7 @@ const Password = () => {
       <label>
         <div>Password</div>
         <div>
-          {ariaDescriptionID}
+          {ariaDescriptionID} {value}
           {/* <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input> */}
         </div>
       </label>
