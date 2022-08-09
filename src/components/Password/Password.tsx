@@ -32,16 +32,16 @@ import Button from "../Button";
 const Password = () => {
   const ariaDescriptionID = uuidv4();
   const [value, setValue] = useState('');
-  // // const [confirmValue, setConfirmValue] = useState('');
+  const [confirmValue, setConfirmValue] = useState('');
   // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
   const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setValue(event.target.value);
   };
 
-  // const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-  //   setConfirmValue(event.target.value);
-  // };
+  const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setConfirmValue(event.target.value);
+  };
 
   const onSubmit = () => {
     // setValidationMessages(['submitted']);
@@ -81,7 +81,7 @@ const Password = () => {
           <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input>
         </div>
       </label>
-{/* 
+
       <label>
         <div>Confirm Password</div>
         <div>
@@ -90,6 +90,8 @@ const Password = () => {
           </div>
         </div>
       </label>
+{/* 
+      
 
       <div id={ariaDescriptionID}>
         {validationMessages.length > 0 ? renderValidationMessages() : ''}
