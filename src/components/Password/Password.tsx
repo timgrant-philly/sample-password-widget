@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React from "react";  //, { useState }
+// import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
 // const rules = [{
@@ -30,18 +30,18 @@ import Button from "../Button";
 // ];
 
 const Password = () => {
-  const ariaDescriptionID = uuidv4();
-  const [value, setValue] = useState('');
-  const [confirmValue, setConfirmValue] = useState('');
-  const [validationMessages] = useState<string[]>([]); // , setValidationMessages
+  // const ariaDescriptionID = uuidv4();
+  // const [value, setValue] = useState('');
+  // // const [confirmValue, setConfirmValue] = useState('');
+  // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
-  const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setValue(event.target.value);
-  };
+  // const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  //   setValue(event.target.value);
+  // };
 
-  const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setConfirmValue(event.target.value);
-  };
+  // const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  //   setConfirmValue(event.target.value);
+  // };
 
   const onSubmit = () => {
     // setValidationMessages(['submitted']);
@@ -67,15 +67,15 @@ const Password = () => {
   //   setValidationMessages(messageArray);
    }
 
-  const renderValidationMessages = () => {
-    return validationMessages.map((m) => {
-      return <div key={m}>{m}</div>
-    })
-  }
+  // const renderValidationMessages = () => {
+  //   return validationMessages.map((m) => {
+  //     return <div key={m}>{m}</div>
+  //   })
+  // }
 
   return (
     <div className="tcg-input">
-      <label>
+      {/* <label>
         <div>Password</div>
         <div>
           <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input>
@@ -93,7 +93,7 @@ const Password = () => {
 
       <div id={ariaDescriptionID}>
         {validationMessages.length > 0 ? renderValidationMessages() : ''}
-      </div>
+      </div> */}
 
       <label>
         <Button type="submit" onClick={onSubmit}>Submit</Button>
