@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React from "react"; //, { useState }
 import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
@@ -31,17 +31,17 @@ import Button from "../Button";
 
 const Password = () => {
   const ariaDescriptionID = uuidv4();
-  const [value, setValue] = useState('');
-  const [confirmValue, setConfirmValue] = useState('');
+  // const [value, setValue] = useState('');
+  // const [confirmValue, setConfirmValue] = useState('');
   // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
-  const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setValue(event.target.value);
-  };
+  // const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  //   setValue(event.target.value);
+  // };
 
-  const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setConfirmValue(event.target.value);
-  };
+  // const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  //   setConfirmValue(event.target.value);
+  // };
 
   const onSubmit = () => {
     // setValidationMessages(['submitted']);
@@ -78,10 +78,11 @@ const Password = () => {
       <label>
         <div>Password</div>
         <div>
-          <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input>
+          {ariaDescriptionID}
+          {/* <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input> */}
         </div>
       </label>
-
+{/* 
       <label>
         <div>Confirm Password</div>
         <div>
@@ -90,7 +91,7 @@ const Password = () => {
           </div>
         </div>
       </label>
-{/* 
+
       
 
       <div id={ariaDescriptionID}>
