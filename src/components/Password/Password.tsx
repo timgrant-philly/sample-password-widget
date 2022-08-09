@@ -1,5 +1,5 @@
-import React from "react";  //, { useState }
-// import { v4 as uuidv4 } from "uuid";
+import React, { useState } from "react"; 
+import { v4 as uuidv4 } from "uuid";
 import Button from "../Button";
 
 // const rules = [{
@@ -30,14 +30,14 @@ import Button from "../Button";
 // ];
 
 const Password = () => {
-  // const ariaDescriptionID = uuidv4();
-  // const [value, setValue] = useState('');
+  const ariaDescriptionID = uuidv4();
+  const [value, setValue] = useState('');
   // // const [confirmValue, setConfirmValue] = useState('');
   // const [validationMessages] = useState<string[]>([]); // , setValidationMessages
 
-  // const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-  //   setValue(event.target.value);
-  // };
+  const onChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setValue(event.target.value);
+  };
 
   // const onConfirmChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
   //   setConfirmValue(event.target.value);
@@ -75,13 +75,13 @@ const Password = () => {
 
   return (
     <div className="tcg-input">
-      {/* <label>
+      <label>
         <div>Password</div>
         <div>
           <input id="password" value={value} aria-describedBy={ariaDescriptionID} onChange={onChange}></input>
         </div>
       </label>
-
+{/* 
       <label>
         <div>Confirm Password</div>
         <div>
